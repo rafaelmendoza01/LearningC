@@ -2,7 +2,8 @@
 #include <string.h>
 #include <math.h>
 #define PI 3.14159
-#define TW 100
+#define FREQ 1
+#define TW 200
 
 void myFunction(){
 	printf("myFunction working ^^\n");
@@ -26,10 +27,24 @@ int main() {
   
   while(x <= 1500){
 
-	y = (sin(x * PI / 180)+1)/2;
-
-	printf("x = %d    | y = %0.3f", x, y);
 	
+	y = (sin(FREQ *x * PI / 180.0)+1.0)/2.0;
+
+	//printf("x = %d    | y = %0.3f", x, y);
+	
+	//Let there be 20 characters between = & |
+	char NumAsString[20];
+	sprintf(NumAsString, "%d", x);
+	
+	int temporary;
+	for(int i = 0; i < strlen(NumAsString); i++){
+		if(NumAsString[i] != ' '){
+			temporary = i + 1;
+		}
+	}
+	
+	printf("x = %d", x);
+	printf("%*c | y = %0.4f", 5 - temporary, ' ',y);
 	
 	Plotval(y, TW);
 	printf("\n");
