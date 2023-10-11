@@ -24,9 +24,9 @@ int main() {
   unsigned long x = 0;
   float y;
   
-  while(x >= 0){
+  while(x <= 1500){
 
-	y = (sin(x * PI / 180)+2)/2;
+	y = (sin(x * PI / 180)+2)/2 - 0.5;
 
 	printf("x = %d    | y = %0.3f", x, y);
 	
