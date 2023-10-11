@@ -26,7 +26,7 @@ int main() {
   
   while(x <= 1500){
 
-	y = (sin(x * PI / 180)+2)/2 - 0.5;
+	y = (sin(x * PI / 180)+1)/2;
 
 	printf("x = %d    | y = %0.3f", x, y);
 	
