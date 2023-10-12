@@ -2,8 +2,9 @@
 #include <string.h>
 #include <math.h>
 #define PI 3.14159
-#define FREQ 1
-#define TW 200
+#define FREQ 10
+#define TW 100
+#define TickWidth 10
 
 void myFunction(){
 	printf("myFunction working ^^\n");
@@ -36,6 +37,7 @@ int main() {
 	char NumAsString[20];
 	sprintf(NumAsString, "%d", x);
 	
+	
 	int temporary;
 	for(int i = 0; i < strlen(NumAsString); i++){
 		if(NumAsString[i] != ' '){
@@ -43,8 +45,21 @@ int main() {
 		}
 	}
 	
+	
+	
+	
 	printf("x = %d", x);
 	printf("%*c | y = %0.4f", 5 - temporary, ' ',y);
+	int ToPrintTick = x%10;
+	if(ToPrintTick == 0){
+		printf("---");
+	} 
+	else{
+		printf("   ");
+	}
+	
+	
+	
 	
 	Plotval(y, TW);
 	printf("\n");
