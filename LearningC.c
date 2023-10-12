@@ -5,6 +5,14 @@
 #define FREQ 10
 #define TW 100
 #define TickWidth 10
+#define RED   "\x1B[31m"
+#define GRN   "\x1B[32m"
+#define YEL   "\x1B[33m"
+#define BLU   "\x1B[34m"
+#define MAG   "\x1B[35m"
+#define CYN   "\x1B[36m"
+#define WHT   "\x1B[37m"
+#define RESET "\x1B[0m"
 
 void myFunction(){
 	printf("myFunction working ^^\n");
@@ -17,10 +25,14 @@ void myFunction(){
     printf("Only this number %*d\n", width, number);
 }
 
+
 void Plotval(float Between01, int TerminalWidth){
 	int WIDTH = Between01 * TerminalWidth;
-	printf("%*c", WIDTH, '*');
+	
+	
+	printf(RED "%*c" RESET, WIDTH, '*');
 }
+
 
 int main() {
   unsigned long x = 0;
@@ -45,9 +57,7 @@ int main() {
 		}
 	}
 	
-	
-	
-	
+
 	printf("x = %d", x);
 	printf("%*c | y = %0.4f", 5 - temporary, ' ',y);
 	int ToPrintTick = x%10;
@@ -58,14 +68,12 @@ int main() {
 		printf("   ");
 	}
 	
-	
-	
-	
 	Plotval(y, TW);
 	printf("\n");
 	x++;
 	  
 	}
+	printf(RED "red\n"     RESET);
 	    
 		
   return 0;
