@@ -14,17 +14,6 @@
 #define WHT   "\x1B[37m"
 #define RESET "\x1B[0m"
 
-void myFunction(){
-	printf("myFunction working ^^\n");
-	unsigned char MyNumber = 'a';
-	printf("%d", MyNumber);
-	printf("%c",MyNumber);
-	
-	int number = 42;
-    int width = 6; 
-    printf("Only this number %*d\n", width, number);
-}
-
 
 void Plotval(float Between01, int TerminalWidth){
 	int WIDTH = Between01 * TerminalWidth;
@@ -56,7 +45,6 @@ int main() {
 			temporary = i + 1;
 		}
 	}
-	
 
 	printf("x = %d", x);
 	printf("%*c | y = %0.4f", 5 - temporary, ' ',y);
