@@ -1,2 +1,2 @@
 # LearningC
-Using C ^^
+Learning C in different contexts
